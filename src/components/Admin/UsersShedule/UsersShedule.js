@@ -72,7 +72,7 @@ const UsersShedule = () => {
           </TableHead>
           <TableBody>
             {specificRequests.map((row) => (
-              <StyledTableRow key={row._id}>
+              <StyledTableRow id={row._id} key={Math.random()}>
                 <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell>

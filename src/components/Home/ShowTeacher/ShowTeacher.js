@@ -22,7 +22,7 @@ const ShowTeacher = () => {
         {allTeacher.map((s) => (
           <Grid item sm={4} xs={12}>
             <TeacherCard
-              key={math.random()}
+              key={Math.random()}
               teacher={s}
               id={s._id}
             ></TeacherCard>
