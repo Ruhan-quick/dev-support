@@ -10,6 +10,7 @@ const ServiceForm = () => {
     duration: "",
     language: "",
     serviceImage: "",
+    price: "",
   });
 
   const handleOnBlur = () => {
@@ -19,6 +20,7 @@ const ServiceForm = () => {
     news.details = document.getElementById("sdescription").value;
     news.duration = document.getElementById("sduration").value;
     news.language = document.getElementById("slanguage").value;
+    news.price = document.getElementById("sprice").value;
     setNewService(news);
     // console.log(newService);
   };
@@ -76,6 +78,15 @@ const ServiceForm = () => {
               onBlur={handleOnBlur}
               type="text"
               placeholder="Subtitle"
+            />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              id="sprice"
+              onBlur={handleOnBlur}
+              type="text"
+              placeholder="Price"
             />
           </Form.Group>
         </Form.Row>

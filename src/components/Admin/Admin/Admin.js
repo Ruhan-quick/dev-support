@@ -5,6 +5,8 @@ import ServiceForm from "../ServiceForm/ServiceForm";
 import TeacherForm from "../TeacherForm/TeacherForm";
 import AddAdmin from "./AddAdmin/AddAdmin";
 import { UserContext } from "../../../App";
+import AdminsShedules from "./AdminsShedule/AdminsShedules";
+import UsersShedule from "../UsersShedule/UsersShedule";
 
 const Admin = () => {
   const [view, setView] = useState("dashboard");
@@ -90,8 +92,13 @@ const Admin = () => {
                 alt=""
               />
             )}
-            {(view === "shedule" && isAdmin && <h1>All Shedules</h1>) || (
-              <h2>Specific Shedules</h2>
+            {view === "shedule" && isAdmin && (
+              <div className="col-12">
+                <AdminsShedules></AdminsShedules>
+              </div>
+            )}
+            {view === "shedule" && isAdmin == false && (
+              <UsersShedule></UsersShedule>
             )}
           </div>
         </div>

@@ -38,6 +38,7 @@ const ServiceCard = ({ service }) => {
         <h3>{service.subtitle}</h3>
         <h4>Duration: {service.duration} Hour</h4>
         <h5>{service.details}</h5>
+        <h3>${service.price}</h3>
         <button onClick={openModal} className="btn btn-success">
           Request Shedule
         </button>
@@ -45,6 +46,7 @@ const ServiceCard = ({ service }) => {
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}
           reqMeetingOn={service.title}
+          price={service.price}
         ></ReqService>
       </div>
     </div>

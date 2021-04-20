@@ -43,7 +43,7 @@ const Login = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <br />
-      <h2>Email: {user.email}</h2>
+      <h2>Current Email: {loggedInUser.email}</h2>
       <br />
       <Button
         onClick={handleGoogleSignIn}

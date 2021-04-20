@@ -18,19 +18,20 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn }) => {
+const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn, price }) => {
   const { register, handleSubmit, errors } = useForm();
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [reqShedule, setReqShedule] = useState({
     name: "",
     email: "",
     reqEmail: "",
-    status: "Received",
+    status: "Pending",
     reqshedule: "",
     reqDate: "",
     reqOn: "",
     gender: "",
     age: "",
+    charge: "",
   });
 
   const handleOnChange = () => {
@@ -43,6 +44,7 @@ const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn }) => {
     newS.age = document.getElementById("sage").value;
     const datestring = new Date().toLocaleString() + "";
     newS.reqDate = datestring;
+    newS.charge = price;
     newS.email = loggedInUser.email;
 
     setReqShedule(newS);
