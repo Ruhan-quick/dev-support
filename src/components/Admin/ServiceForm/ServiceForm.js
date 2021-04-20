@@ -43,7 +43,7 @@ const ServiceForm = () => {
   };
 
   const onSubmit = () => {
-    fetch("http://localhost:5000/addService", {
+    fetch("http://calm-woodland-41976.herokuapp.com/addService", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newService),

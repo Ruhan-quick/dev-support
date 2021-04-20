@@ -5,7 +5,7 @@ import ReviewCard from "./ReviewCard";
 const ShowReview = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/showReview")
+    fetch("http://calm-woodland-41976.herokuapp.com/showReview")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   });

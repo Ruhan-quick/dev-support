@@ -6,7 +6,7 @@ const AllServices = () => {
   const [allServices, setAllServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/showServices")
+    fetch("http://calm-woodland-41976.herokuapp.com/showServices")
       .then((res) => res.json())
       .then((data) => setAllServices(data));
   }, []);

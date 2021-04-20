@@ -7,7 +7,7 @@ const ShowTeacher = () => {
   const [allTeacher, setAllTeacher] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/showTeacher")
+    fetch("http://calm-woodland-41976.herokuapp.com/showTeacher")
       .then((res) => res.json())
       .then((data) => setAllTeacher(data));
   }, []);

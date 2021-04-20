@@ -51,7 +51,7 @@ const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn, price }) => {
   };
 
   const onSubmit = () => {
-    fetch("http://localhost:5000/sendRequest", {
+    fetch("http://calm-woodland-41976.herokuapp.com/sendRequest", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(reqShedule),

@@ -49,7 +49,7 @@ const SendReview = () => {
   };
   const onSubmit = () => {
     console.log(review);
-    fetch("http://localhost:5000/sendReview", {
+    fetch("http://calm-woodland-41976.herokuapp.com/sendReview", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(review),
