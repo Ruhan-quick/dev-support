@@ -15,7 +15,7 @@ const ShowReview = () => {
       <Grid container>
         {reviews.map((rv) => (
           <Grid item xs={12} sm={4}>
-            <ReviewCard rv={rv}></ReviewCard>
+            <ReviewCard key={math.random()} id={rv._id} rv={rv}></ReviewCard>
           </Grid>
         ))}
       </Grid>

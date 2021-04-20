@@ -21,7 +21,11 @@ const ShowTeacher = () => {
       <Grid container spacing={3}>
         {allTeacher.map((s) => (
           <Grid item sm={4} xs={12}>
-            <TeacherCard teacher={s} key={s._id}></TeacherCard>
+            <TeacherCard
+              key={math.random()}
+              teacher={s}
+              id={s._id}
+            ></TeacherCard>
           </Grid>
         ))}
       </Grid>
