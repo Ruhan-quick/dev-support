@@ -15,7 +15,7 @@ import {
 // import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import { UserContext } from "../../../App";
 
-const SideBar = ({ setView }) => {
+const SideBar = ({ isAdmin, setView }) => {
   return (
     <div
       className="sidebar d-flex flex-column justify-content-between col-12 py-5 px-4"
@@ -49,21 +49,35 @@ const SideBar = ({ setView }) => {
               <FontAwesomeIcon icon={faUsers} /> <span>Students</span>
             </Link>
           </li>
-          <li>
-            <Link onClick={() => setView("addTeacher")} className="text-white">
-              <FontAwesomeIcon icon={faUserPlus} /> <span>Add Teacher</span>
-            </Link>
-          </li>
-          <li>
-            <Link onClick={() => setView("addService")} className="text-white">
-              <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
-            </Link>
-          </li>
-          <li>
-            <Link onClick={() => setView("addAdmin")} className="text-white">
-              <FontAwesomeIcon icon={faPlus} /> <span>Add Admin</span>
-            </Link>
-          </li>
+
+          {isAdmin && (
+            <ul>
+              <li>
+                <Link
+                  onClick={() => setView("addTeacher")}
+                  className="text-white"
+                >
+                  <FontAwesomeIcon icon={faUserPlus} /> <span>Add Teacher</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setView("addService")}
+                  className="text-white"
+                >
+                  <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setView("addAdmin")}
+                  className="text-white"
+                >
+                  <FontAwesomeIcon icon={faPlus} /> <span>Add Admin</span>
+                </Link>
+              </li>
+            </ul>
+          )}
           <li>
             <Link onClick={() => setView("setting")} className="text-white">
               <FontAwesomeIcon icon={faCog} /> <span>Settings</span>

@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 import { Button, Col, Form } from "react-bootstrap";
 import { UserContext } from "../../../App";
+import PayForm from "../PayForm/PayForm";
 
 const customStyles = {
   content: {
@@ -133,6 +134,10 @@ const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn }) => {
             </Form.Group>
           </Form.Row>
         </Form>
+        <div>
+          <h4>Advance Deposit (Optional)</h4>
+          <PayForm></PayForm>
+        </div>
         <button
           className="btn btn-warning"
           style={{
@@ -141,7 +146,7 @@ const ReqService = ({ modalIsOpen, closeModal, reqMeetingOn }) => {
           }}
           onClick={onSubmit}
         >
-          Save
+          Submit
         </button>
       </Modal>
     </div>

@@ -3,6 +3,7 @@ import Footer from "../../Footer/Footer";
 import Header from "../Header/Header";
 import DisplayService from "../ServiceCC/DisplayServices/DisplayService";
 import ShowTeacher from "../ShowTeacher/ShowTeacher";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Header></Header>
       <DisplayService></DisplayService>
       <ShowTeacher></ShowTeacher>
+      <Testimonials></Testimonials>
       <Footer></Footer>
     </div>
   );

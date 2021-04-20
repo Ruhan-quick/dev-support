@@ -1,19 +1,37 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SideBar from "../SideBar/SideBar";
 import Grid from "@material-ui/core/Grid";
 import ServiceForm from "../ServiceForm/ServiceForm";
 import TeacherForm from "../TeacherForm/TeacherForm";
 import AddAdmin from "./AddAdmin/AddAdmin";
+import { UserContext } from "../../../App";
 
 const Admin = () => {
   const [view, setView] = useState("dashboard");
+  const [admins, setAdmins] = useState([]);
+
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  useEffect(() => {
+    fetch("http://localhost:5000/showAdmins")
+      .then((res) => res.json())
+      .then((data) => setAdmins(data));
+  });
+  let isAdmin = false;
+  const setAdminTrue = () => {
+    isAdmin = true;
+  };
+  admins.map((ada) => {
+    if (ada.email === loggedInUser.email) {
+      setAdminTrue();
+    }
+  });
 
   return (
     <div>
       <section>
         <div className="row">
           <div className="col-md-2 col-sm-6 col-12">
-            <SideBar setView={setView}></SideBar>
+            <SideBar isAdmin={isAdmin} setView={setView}></SideBar>
           </div>
           <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
             {view === "addService" && (
@@ -50,7 +68,7 @@ const Admin = () => {
               </div>
             )}
             {view === "addAdmin" && (
-              <div className="row pt-5">
+              <div style={{ marginTop: "100px" }} className="row pt-5">
                 <div
                   className="col-md-6 col-sm-12"
                   style={{ paddingTop: "80px" }}
@@ -60,7 +78,7 @@ const Admin = () => {
                 <div className="col-md-6 col-sm-12">
                   <img
                     style={{ width: "90%" }}
-                    src="https://image.freepik.com/free-vector/professor-concept-illustration_114360-4226.jpg"
+                    src="https://image.freepik.com/free-vector/admin-concept-illustration_114360-2229.jpg"
                     alt=""
                   />
                 </div>
@@ -71,6 +89,9 @@ const Admin = () => {
                 src="https://cdn.dribbble.com/users/444229/screenshots/4246321/shopperations-ugem.gif"
                 alt=""
               />
+            )}
+            {(view === "shedule" && isAdmin && <h1>All Shedules</h1>) || (
+              <h2>Specific Shedules</h2>
             )}
           </div>
         </div>

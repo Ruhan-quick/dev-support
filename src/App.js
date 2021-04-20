@@ -8,6 +8,7 @@ import NavBar from "../src/components/Home/NavBar/NavBar";
 import Login from "./components/Login/Login";
 import { createContext, useState } from "react";
 import About from "./components/About/About";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -24,20 +25,20 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin></Admin>
-          </Route>
-          <Route path="/dashboard">
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
             <Admin></Admin>
-          </Route>
-          <Route path="/availableServices">
+          </PrivateRoute>
+          <PrivateRoute path="/availableServices">
             <NavBar></NavBar>
             <AvailableServices></AvailableServices>
-          </Route>
-          <Route path="/services">
+          </PrivateRoute>
+          <PrivateRoute path="/services">
             <NavBar></NavBar>
             <AvailableServices></AvailableServices>
-          </Route>
+          </PrivateRoute>
           <Route path="/about">
             <NavBar></NavBar>
             <About></About>
