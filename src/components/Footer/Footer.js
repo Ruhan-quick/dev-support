@@ -11,32 +11,32 @@ import {
 const Footer = () => {
   const noNamed = [
     { name: "Emergency Dental Care", link: "/emergency" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Treatment of Personal Diseases", link: "/personal-treatment" },
-    { name: "Tooth Extraction", link: "/tooth-extract" },
-    { name: "Check Up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Solve Personal Projects", link: "/personal-support" },
+    { name: "Lets Explore", link: "/extract" },
+    { name: "Meet up", link: "/checkup" },
   ];
   const ourAddress = [
     { name: "New York - 101010 Hudson", link: "//google.com/map" },
     { name: "Yards", link: "//google.com/map" },
   ];
   const oralHealth = [
-    { name: "Emergency Dental Care", link: "/emergency" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Treatment of Personal Diseases", link: "/personal-treatment" },
+    { name: "Emergency Support Call", link: "/emergency" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Solve Personal Projects", link: "/personal-support" },
     { name: "Tooth Extraction", link: "/tooth-extract" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Check Up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
   ];
   const services = [
     { name: "Emergency Dental Care", link: "/emergency" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Treatment of Personal Diseases", link: "/personal-treatment" },
-    { name: "Tooth Extraction", link: "/tooth-extract" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Check Up", link: "/checkup" },
-    { name: "Check Up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Solve Personal Projects", link: "/personal-support" },
+    { name: "Explore", link: "/tooth-extract" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
+    { name: "Meet up", link: "/checkup" },
   ];
   return (
     <footer className="footer-area clear-both">
@@ -44,8 +44,8 @@ const Footer = () => {
         <div className="row py-5">
           <FooterCol key={1} menuTitle={"."} menuItems={noNamed} />
           <FooterCol key={2} menuTitle="Services" menuItems={services} />
-          <FooterCol key={3} menuTitle="Oral Health" menuItems={oralHealth} />
-          <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}>
+          <FooterCol key={3} menuTitle="Java Care" menuItems={oralHealth} />
+          <FooterCol key={4} menuTitle="Python Care" menuItems={ourAddress}>
             <ul className="social-media list-inline">
               <li className="list-inline-item">
                 <a href="//facebook.com">

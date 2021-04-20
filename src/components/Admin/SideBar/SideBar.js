@@ -44,14 +44,18 @@ const SideBar = ({ isAdmin, setView }) => {
               <FontAwesomeIcon icon={faCalendar} /> <span>Sheduels</span>
             </Link>
           </li>
-          <li>
-            <Link onClick={() => setView("students")} className="text-white">
-              <FontAwesomeIcon icon={faUsers} /> <span>Students</span>
-            </Link>
-          </li>
 
           {isAdmin && (
             <ul>
+              <li>
+                <Link
+                  onClick={() => setView("serviceManage")}
+                  className="text-white"
+                >
+                  <FontAwesomeIcon icon={faUsers} />{" "}
+                  <span>Service Management</span>
+                </Link>
+              </li>
               <li>
                 <Link
                   onClick={() => setView("addTeacher")}

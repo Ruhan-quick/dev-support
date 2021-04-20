@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../App";
-
+import "./NavBar.css";
 const NavBar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
@@ -17,7 +17,7 @@ const NavBar = () => {
     <Navbar bg="dark" variant="dark" sticky="top" expand="lg">
       <Navbar.Brand as={Link} to="/home" className="ml-5">
         <img
-          style={{ height: "40px", width: "40px" }}
+          id="imgicon"
           src="https://cdn2.iconfinder.com/data/icons/scrum-project-blue/100/Development_team_Copy-512.png"
           alt="Dev-Support"
         />{" "}
