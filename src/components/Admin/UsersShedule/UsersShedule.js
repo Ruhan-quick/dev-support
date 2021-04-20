@@ -14,7 +14,10 @@ const UsersShedule = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [specificRequests, setSpecificRequests] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/showRequests?email=" + loggedInUser.email)
+    fetch(
+      "http://calm-woodland-41976.herokuapp.com/showRequests?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setSpecificRequests(data));
   }, []);

@@ -42,7 +42,7 @@ const TeacherForm = () => {
   };
 
   const onSubmit = () => {
-    fetch("http://localhost:5000/addTeacher", {
+    fetch("http://calm-woodland-41976.herokuapp.com/addTeacher", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newTeacher),

@@ -14,7 +14,7 @@ const Admin = () => {
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   useEffect(() => {
-    fetch("http://localhost:5000/showAdmins")
+    fetch("http://calm-woodland-41976.herokuapp.com/showAdmins")
       .then((res) => res.json())
       .then((data) => setAdmins(data));
   });

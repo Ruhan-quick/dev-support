@@ -11,7 +11,7 @@ const AddAdmin = () => {
   };
 
   const onSubmit = () => {
-    fetch("http://localhost:5000/addAdmin", {
+    fetch("http://calm-woodland-41976.herokuapp.com/addAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newAdmin),

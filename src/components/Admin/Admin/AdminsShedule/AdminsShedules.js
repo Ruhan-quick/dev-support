@@ -12,7 +12,7 @@ import { Form } from "react-bootstrap";
 const AdminsShedules = () => {
   const [allRequests, setAllRequests] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/showAllRequest")
+    fetch("http://calm-woodland-41976.herokuapp.com/showAllRequest")
       .then((res) => res.json())
       .then((data) => setAllRequests(data));
   }, []);
@@ -44,7 +44,7 @@ const AdminsShedules = () => {
   const updateStatus = (id) => {
     const status = document.getElementById("status").value;
     console.log("updateStatus worked");
-    fetch(`http://localhost:5000/update/${id}`, {
+    fetch(`http://calm-woodland-41976.herokuapp.com/update/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status }),
@@ -58,7 +58,7 @@ const AdminsShedules = () => {
 
   const handleOnChange = (id) => {
     console.log("updateOnChange worked");
-    fetch(`http://localhost:5000/request/${id}`)
+    fetch(`http://calm-woodland-41976.herokuapp.com/request/${id}`)
       .then((res) => res.json())
       .then((data) => updateStatus(data._id));
   };
